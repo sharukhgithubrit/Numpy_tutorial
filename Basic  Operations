@@ -1,0 +1,101 @@
+CREATING NUMPY ARRAYS
+import numpy as np
+
+# Create a 1D array
+arr1 = np.array([1, 2, 3, 4, 5])
+
+# Create a 2D array (matrix)
+arr2 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+ARRAY FUNCTIONS
+import numpy as np
+
+zeros_arr = np.zeros((3, 3))   # Creates a 3x3 array of zeros
+ones_arr = np.ones((2, 4))     # Creates a 2x4 array of ones
+identity_matrix = np.eye(3)    # Creates a 3x3 identity matrix
+random_arr = np.random.rand(2, 2)  # Creates a 2x2 array with random values
+
+# Reshaping arrays
+reshaped_arr = random_arr.reshape(1, 4)  # Reshapes to a 1x4 array
+USER DEFINE FUNCTIONS
+x = np.arange(4)
+print (x)
+     
+[0 1 2 3]
+
+print (x+5) #adding 5 for each element
+     
+[5 6 7 8]
+
+print (x-5) #sub 5 for each element
+     
+[-5 -4 -3 -2]
+
+print (x*5) #mul 5 for each element
+     
+[ 0  5 10 15]
+
+print (x/5) #div 5 for each element
+     
+[0.  0.2 0.4 0.6]
+
+print (x//5) # // floor division
+     
+[0 0 0 0]
+
+theta = np.linspace(0,np.pi,3)  #numpy.linspace() create an evenly spaced sequence in a specified interval.  
+theta
+array([0.        , 1.57079633, 3.14159265])
+
+np.sin(theta) #arc sin   
+array([0.0000000e+00, 1.0000000e+00, 1.2246468e-16])
+
+np.cos(theta) #arc cos    
+array([ 1.000000e+00,  6.123234e-17, -1.000000e+00])
+
+np.tan(theta) #arc tan    
+array([ 0.00000000e+00,  1.63312394e+16, -1.22464680e-16])
+
+x = np.array([1,2,3])   
+np.exp(x)#e^x
+     
+array([ 2.71828183,  7.3890561 , 20.08553692])
+
+print("2^x   =", np.exp2(x))
+print("3^x   =", np.power(3, x))
+     
+2^x   = [2. 4. 8.]
+3^x   = [ 3  9 27]
+
+x = [1,2,4,10]
+
+print("ln(x) =", np.log(x))    
+ln(x) = [0.         0.69314718 1.38629436 2.30258509]
+
+print("log2(x)  =", np.log2(x))
+print("log10(x) =", np.log10(x)) 
+log2(x)  = [0.         1.         2.         3.32192809]
+log10(x) = [0.         0.30103    0.60205999 1.        ]
+
+x = [0, 0.001, 0.01, 0.1]
+print("exp(x) - 1 =", np.expm1(x))
+print("log(1 + x) =", np.log1p(x))
+     
+exp(x) - 1 = [0.         0.0010005  0.01005017 0.10517092]
+log(1 + x) = [0.         0.0009995  0.00995033 0.09531018]
+
+x = np.random.random(100)
+x.shape  
+(100,)
+
+%timeit sum(x)
+%timeit np.sum(x)
+     
+12.6 µs ± 4.39 µs per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+3.85 µs ± 70 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+np.min(x) 
+0.000895428331925352
+
+np.max(x)     
+0.9649503529568372
